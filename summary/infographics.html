@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Infographics bank</title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Modernize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- <link href="css/bootstrap.min (2).css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.min (3).css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.min (4).css" rel="stylesheet" type="text/css" media="all" />
+   -->
+    <!-- Bootstrap Css -->
+    <!-- Bars Css -->
+    <link rel="stylesheet" href="css/bar.css">
+    <!--// Bars Css -->
+    <!-- Calender Css -->
+    <link rel="stylesheet" type="text/css" href="css/pignose.calender.css" />
+    <!--// Calender Css -->
+    <!-- Common Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+
+      <!-- css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  
+  <style>
+  /* @import 'bulma/css/bulma.css'; */
+  
+  </style>
+  
+  <style>
+  
+  .active{
+    color: white;
+    background-color: #127A8B; 
+  }
+  
+  .normal{
+    color: #127A8B;
+    background-color: white;
+  }
+  .explore{
+    color: white;
+    background-color: #184E64; 
+  }
+  .font{
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 50px;
+  }
+  .pc{
+      background-color: #184E64;
+  }
+  .block{
+      display: none
+  }
+  a {
+   border-color: rgba(0, 0,0, 0) !important
+  }
+  
+  </style>
+  
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "efed9f3d-6efd-45a1-bf98-c876d520b78e",
+      });
+    });
+  </script>
+  
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work',     11],
+        ['Eat',      2],
+        ['Commute',  2],
+        ['Watch TV', 2],
+        ['Sleep',    7]
+      ]);
+
+      var options = {
+        title: 'My Daily Activities',
+        // colors: ['red','green'],
+        is3D: true,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+
+<body>
+    <div class="se-pre-con"></div>
+    <div class="wrapper">
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+
+         
+            <div class="container-fluid">
+                <div class="row">
+                      
+                    <!-- Stats -->
+                    <div class="outer-w3-agile col-xl">
+                        <div class="stat-grid p-3 d-flex align-items-center justify-content-between bg-primary">
+                            <div class="s-l">
+                                <h5>Total Projects</h5>
+                                <p class="paragraph-agileits-w3layouts text-white">Lorem Ipsum</p>
+                            </div>
+                            <div class="s-r">
+                                <h6>{{1 label=Total Projects}}
+                                    <i class="far fa-edit"></i>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-success">
+                            <div class="s-l">
+                                <h5>Completed Projects</h5>
+                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
+                            </div>
+                            <div class="s-r">
+                                <h6>{{2 label=Completed Projects}}
+                                    <i class="far fa-smile"></i>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-danger">
+                            <div class="s-l">
+                                <h5>Not Started</h5>
+                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
+                            </div>
+                            <div class="s-r">
+                                <h6>{{3 label=Not Started}}
+                                    <i class="fas fa-tasks"></i>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="stat-grid p-3 mt-3 d-flex align-items-center justify-content-between bg-warning">
+                            <div class="s-l">
+                                <h5>Ongoing Projects</h5>
+                                <p class="paragraph-agileits-w3layouts">Lorem Ipsum</p>
+                            </div>
+                            <div class="s-r">
+                                <h6>{{4 label=Ongoing Projects}}
+                                    <i class="fas fa-users"></i>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// Stats -->
+                    <!-- Pie-chart -->
+                    <div class="outer-w3-agile col-xl ml-xl-3 mt-xl-0 mt-3">
+                        <!-- <h4 class="tittle-w3-agileits mb-4">Pie Chart</h4>
+                        <div id="chartdiv"></div> -->
+                        <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+
+                        <!-- <a class="button" href="index.html" align="right">close</a> -->
+                    </div>
+                    <!--// Pie-chart -->
+                </div>
+            </div>
+            
+            <!-- Simple-chart -->
+            <!-- <div class="outer-w3-agile mt-3">
+                <h4 class="tittle-w3-agileits mb-4">Graph</h4>
+                <div id="Hybridgraph" class="simple-chart1">
+
+                    <a href="">More Bar Graphs</a>
+                </div>
+            </div> -->
+            <!--// Simple-chart -->
+
+
+
+            <!--// three-grids -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="outer-w3-agile col-xl mt-3">
+
+            <div class="outer-w3-agile mt-3">
+                <h4 class="tittle-w3-agileits mb-4">Bar Chart</h4>
+                <div id="chart-1"></div>
+            </div>
+                        </div>
+
+                    <!-- Browser stats -->
+                    <div class="outer-w3-agile col-xl mt-3">
+                        <h4 class="tittle-w3-agileits mb-4">Browser Stats</h4>
+                        <div class="stats-info stats-body">
+                            <ul class="list-unstyled">
+                                <li class="pb-3">GoogleChrome
+                                    <span class="float-right">85%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar green" style="width:85%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Firefox
+                                    <span class="float-right">35%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar yellow" style="width:35%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Internet Explorer
+                                    <span class="float-right">78%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar red" style="width:78%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Safari
+                                    <span class="float-right">50%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar blue" style="width:50%;"></div>
+                                    </div>
+                                </li>
+                                <li class="py-md-4 py-3">Opera
+                                    <span class="float-right">80%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar light-blue" style="width:80%;"></div>
+                                    </div>
+                                </li>
+                                <li class="last py-md-4 py-3">Others
+                                    <span class="float-right">60%</span>
+                                    <div class="progress progress-striped active progress-right">
+                                        <div class="bar orange" style="width:60%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--// Browser stats -->
+                </div>
+            </div>
+            <!--// Three-grids -->
+            <!-- Countdown -->
+<!-- 
+            <div class="outer-w3-agile mt-3 outer-w3-agile-bg">
+                <h4 class="tittle-w3-agileits mb-4 text-white">Countdown Timer</h4>
+                <div class="simply-countdown-custom" id="simply-countdown-custom"></div>
+            </div>
+            <--// Countdown - -->
+            
+        </div>
+    </div>
+
+
+    <!-- Required common Js -->
+    <script src='js/jquery-2.2.3.min.js'></script>
+    <!-- //Required common Js -->
+    
+    <!-- loading-gif Js -->
+    <script src="js/modernizr.js"></script>
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+    <!--// loading-gif Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+
+    <!-- Graph -->
+    
+    <script src="js/SimpleChart.js"></script>
+    <script>
+        var graphdata4 = {
+            linecolor: "Random",
+            title: "Thursday",
+            values: [{
+                    X: "1",
+                    Y: 300.00
+                },
+                {
+                    X: "2",
+                    Y: 101.98
+                },
+                {
+                    X: "3",
+                    Y: 140.00
+                },
+                {
+                    X: "4",
+                    Y: 340.00
+                },
+                {
+                    X: "5",
+                    Y: 470.25
+                },
+                {
+                    X: "6",
+                    Y: 180.56
+                },
+                {
+                    X: "7",
+                    Y: 680.57
+                },
+                {
+                    X: "8",
+                    Y: 740.00
+                },
+                {
+                    X: "9",
+                    Y: 800.89
+                },
+                {
+                    X: "10",
+                    Y: 420.57
+                },
+                {
+                    X: "11",
+                    Y: 980.24
+                },
+                {
+                    X: "12",
+                    Y: 1080.00
+                },
+                {
+                    X: "13",
+                    Y: 140.24
+                },
+                {
+                    X: "14",
+                    Y: 140.58
+                },
+                {
+                    X: "15",
+                    Y: 110.54
+                },
+                {
+                    X: "16",
+                    Y: 480.00
+                },
+                {
+                    X: "17",
+                    Y: 580.00
+                },
+                {
+                    X: "18",
+                    Y: 340.89
+                },
+                {
+                    X: "19",
+                    Y: 100.26
+                },
+                {
+                    X: "20",
+                    Y: 1480.89
+                },
+                {
+                    X: "21",
+                    Y: 1380.87
+                },
+                {
+                    X: "22",
+                    Y: 1640.00
+                },
+                {
+                    X: "23",
+                    Y: 1700.00
+                },
+                {
+                    X: "24",
+                    Y: 1640.00
+                },
+                {
+                    X: "25",
+                    Y: 1640.00
+                },
+                {
+                    X: "26",
+                    Y: 1640.00
+                },
+                {
+                    X: "27",
+                    Y: 1640.00
+                },
+                {
+                    X: "28",
+                    Y: 1640.00
+                },                {
+                    X: "29",
+                    Y: 1640.00
+                },                {
+                    X: "30",
+                    Y: 1640.00
+                },                {
+                    X: "31",
+                    Y: 1640.00
+                },                {
+                    X: "32",
+                    Y: 1640.00
+                },                {
+                    X: "33",
+                    Y: 1640.00
+                },                {
+                    X: "34",
+                    Y: 1640.00
+                },                {
+                    X: "35",
+                    Y: 1640.00
+                },                {
+                    X: "36",
+                    Y: 1640.00
+                },                {
+                    X: "37",
+                    Y: 1640.00
+                },
+            ]
+        };
+        $(function () {
+            $("#Hybridgraph").SimpleChart({
+                ChartType: "Hybrid",
+                toolwidth: "50",
+                toolheight: "25",
+                axiscolor: "#E6E6E6",
+                textcolor: "#6E6E6E",
+                showlegends: false,
+                data: [graphdata4],
+                legendsize: "140",
+                legendposition: 'bottom',
+                xaxislabel: 'Hours',
+                title: 'Weekly Profit',
+                yaxislabel: 'Profit in $'
+            });
+        });
+    </script>
+    <!--// Graph -->
+    <!-- Bar-chart -->
+    <script src="js/rumcaJS.js"></script>
+    <script src="js/example.js"></script>
+    <!--// Bar-chart -->
+    <!-- Calender -->
+    <script src="js/moment.min.js"></script>
+    <script src="js/pignose.calender.js"></script>
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('.calender').pignoseCalender({
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+
+            $('.multi-select-calender').pignoseCalender({
+                multiple: true,
+                select: function (date, obj) {
+                    obj.calender.parent().next().show().text('You selected ' +
+                        (date[0] === null ? 'null' : date[0].format('YYYY-MM-DD')) +
+                        '~' +
+                        (date[1] === null ? 'null' : date[1].format('YYYY-MM-DD')) +
+                        '.');
+                }
+            });
+        });
+        //]]>
+    </script>
+    <!--// Calender -->
+
+    <!-- profile-widget-dropdown js-->
+    <script src="js/script.js"></script>
+    <!--// profile-widget-dropdown js-->
+
+    <!-- Count-down -->
+    <script src="js/simplyCountdown.js"></script>
+    <link href="css/simplyCountdown.css" rel='stylesheet' type='text/css' />
+    <script>
+        var d = new Date();
+        simplyCountdown('simply-countdown-custom', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 2,
+            day: 25
+        });
+    </script>
+    <!--// Count-down -->
+
+    <!-- pie-chart -->
+    <script src='js/amcharts.js'></script>
+    <script>
+        var chart;
+        var legend;
+
+        var chartData = [
+            {
+                country: "Not Started",
+                value: '{{3 label=Not Started}}  '
+            },
+            {
+                country: "Completed Projects",
+                value: '{{2 label=Completed Projects}}'
+            },
+            {
+                country: "Ongoing Projects",
+                value: '{{4 label=Ongoing Projects}}'
+            }
+           
+        ];
+
+        AmCharts.ready(function () {
+            // PIE CHART
+            chart = new AmCharts.AmPieChart();
+            chart.dataProvider = chartData;
+            chart.titleField = "country";
+            chart.valueField = "value";
+            chart.outlineColor = "";
+            chart.outlineAlpha = 0.8;
+            chart.outlineThickness = 2;
+            // this makes the chart 3D
+            chart.depth3D = 20;
+            chart.angle = 20;
+
+            // WRITE
+            chart.write("chartdiv");
+        });
+    </script>
+    <!--// pie-chart -->
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+
+    <!-- Js for bootstrap working-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+    <script>
+
+
+
+            /******************************************
+            
+            * Cross browser cursor trailer script- By Brian Caputo (bcaputo@icdc.com)
+            
+            * Visit Dynamic Drive (http://www.dynamicdrive.com/) for full source code
+            
+            * Modified Dec 30th, 02' by DD. This notice must stay intact for use
+            
+            ******************************************/
+            
+            
+            
+            A=document.getElementById
+            
+            B=document.all;
+            
+            C=document.layers;
+            
+            T1=new Array("mouse.png",10,10,)
+            
+            //"explore.png",38,35,"explore.png",30,31,"explore.png",28,26,"explore.png",22,21,"explore.png",16,16,"explore.png",10,10
+            
+            var offsetx=15 //x offset of trail from mouse pointer
+            
+            var offsety=10 //y offset of trail from mouse pointer
+            
+            
+            
+            nos=parseInt(T1.length/3)
+            
+            rate=50
+            
+            ie5fix1=0;
+            
+            ie5fix2=0;
+            
+            rightedge=B? document.body.clientWidth-T1[1] : window.innerWidth-T1[1]-20
+            
+            bottomedge=B? document.body.scrollTop+document.body.clientHeight-T1[2] : window.pageYOffset+window.innerHeight-T1[2]
+            
+            
+            
+            for (i=0;i<nos;i++){
+            
+            createContainer("CUR"+i,i*10,i*10,i*3+1,i*3+2,"","<img src='"+T1[i*3]+"' width="+T1[(i*3+1)]+" height="+T1[(i*3+2)]+" border=0>")
+            
+            }
+            
+            
+            
+            function createContainer(N,Xp,Yp,W,H,At,HT,Op,St){
+            
+            with (document){
+            
+            write((!A && !B) ? "<layer id='"+N+"' left="+Xp+" top="+Yp+" width="+W+" height="+H : "<div id='"+N+"'"+" style='position:absolute;left:"+Xp+"; top:"+Yp+"; width:"+W+"; height:"+H+"; ");
+            
+            if(St){
+            
+            if (C)
+            
+            write(" style='");
+            
+            write(St+";' ")
+            
+            }
+            
+            else write((A || B)?"'":"");
+            
+            write((At)? At+">" : ">");
+            
+            write((HT) ? HT : "");
+            
+            if (!Op)
+            
+            closeContainer(N)
+            
+            }
+            
+            }
+            
+            
+            
+            function closeContainer(){
+            
+            document.write((A || B)?"</div>":"</layer>")
+            
+            }
+            
+            
+            
+            function getXpos(N){
+            
+            if (A)
+            
+            return parseInt(document.getElementById(N).style.left)
+            
+            else if (B)
+            
+            return parseInt(B[N].style.left)
+            
+            else
+            
+            return C[N].left
+            
+            }
+            
+            
+            
+            function getYpos(N){
+            
+            if (A)
+            
+            return parseInt(document.getElementById(N).style.top)
+            
+            else if (B)
+            
+            return parseInt(B[N].style.top)
+            
+            else
+            
+            return C[N].top
+            
+            }
+            
+            
+            
+            function moveContainer(N,DX,DY){
+            
+            c=(A)? document.getElementById(N).style : (B)? B[N].style : (C)? C[N] : "";
+            
+            if (!B){
+            
+            rightedge=window.innerWidth-T1[1]-20
+            
+            bottomedge=window.pageYOffset+window.innerHeight-T1[2]
+            
+            }
+            
+            c.left=Math.min(rightedge, DX+offsetx) + 'px';
+            
+            c.top=Math.min(bottomedge, DY+offsety) + 'px';
+            
+            }
+            
+            function cycle(){
+            
+            //if (IE5) 
+            
+            if (document.all&&window.print){
+            
+            ie5fix1=document.body.scrollLeft;
+            
+            ie5fix2=document.body.scrollTop;
+            
+            }
+            
+            for (i=0;i<(nos-1);i++){
+            
+            moveContainer("CUR"+i,getXpos("CUR"+(i+1)),getYpos("CUR"+(i+1)))
+            
+            }
+            
+            }
+            
+            
+            
+            function newPos(e){
+            
+            moveContainer("CUR"+(nos-1),(B)?event.clientX+ie5fix1:e.pageX+2,(B)?event.clientY+ie5fix2:e.pageY+2)
+            
+            }
+            
+            
+            
+            function getedgesIE(){
+            
+            rightedge=document.body.clientWidth-T1[1]
+            
+            bottomedge=document.body.scrollHeight-T1[2]
+            
+            }
+            
+            
+            
+            if (B){
+            
+            window.onload=getedgesIE
+            
+            window.onresize=getedgesIE
+            
+            }
+            
+            
+            
+            if(document.layers)
+            
+            document.captureEvents(Event.MOUSEMOVE)
+            
+            document.onmousemove=newPos
+            
+            setInterval("cycle()",rate)
+            
+            </script>
+
+</body>
+
+</html>

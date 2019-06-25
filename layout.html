@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0173)file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./layout_files/style.css">
+  <link rel="stylesheet" href="./layout_files/responsive-FINISHED.css">
+  <title>Responsive Website!</title>
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <div class="top">
+      <header class="hero">
+        <h1>Terry's Taco Joint</h1>
+        <p>Pretty Good Tacos!</p>
+      </header>
+      <div class="cta cta1">
+        <p class="price">$1.99</p>
+        <p>Tacos</p>
+      </div>
+      <div class="cta cta2">
+        <p class="price">$3.99</p>
+        <p>Kombucha</p>
+      </div>
+
+    </div>
+    <nav class="menu">
+      <button aria-expanded="false" aria-controls="menu-list">
+        <span class="open">☰</span>
+        <span class="close">×</span>
+        Menu
+      </button>
+      <ul id="menu-list">
+        <li>
+          <a href="file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html">Tacos</a>
+        </li>
+        <li>
+          <a href="file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html">Beers</a>
+        </li>
+        <li>
+          <a href="file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html">Wines</a>
+        </li>
+        <li>
+          <a href="file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html">Desserts</a>
+        </li>
+        <li>
+          <a href="file:///C:/Users/BudgIT%20(CivicHive)/Documents/Babalola%20Tobi/my%20project/my%20project/my%20project/css-grid-master/24%20-%20Responisve%20Website/responsive-FINISHED.html">Reservations</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="features">
+      <div class="feature">
+        <span class="icon">🌮</span>
+        <h3>Tacos</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🍺</span>
+        <h3>Beer</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🍷</span>
+        <h3>Wine</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🎵</span>
+        <h3>Music</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
+      </div>
+    </section>
+
+    <section class="about">
+      <img src="./layout_files/queso-taco.png" alt="Yummy Taco" class="about__mockup">
+      <div class="about__details">
+        <h2>Featured Taco</h2>
+        <p>Slim Profile, easy to hold and loaded with cheese.</p>
+        <p>This is the one you have been waiting for</p>
+        <button>Learn More →</button>
+      </div>
+    </section>
+
+
+    <section class="gallery">
+      <h2>Instant Grams</h2>
+      <img src="./layout_files/201x201" alt="">
+      <img src="./layout_files/202x202" alt="">
+      <img src="./layout_files/203x203" alt="">
+      <img src="./layout_files/204x204" alt="">
+      <img src="./layout_files/205x205" alt="">
+      <img src="./layout_files/206x206" alt="">
+      <img src="./layout_files/207x207" alt="">
+      <img src="./layout_files/207x208" alt="">
+      <img src="./layout_files/207x209" alt="">
+      <img src="./layout_files/207x210" alt="">
+    </section>
+  </div>
+
+  <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
+
+  </script>
+
+
+</body></html>

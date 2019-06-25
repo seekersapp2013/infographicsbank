@@ -1,0 +1,11 @@
+{
+  "name": "state",
+  "vapid": {
+  },
+  "scripts": {
+    "start": "vapid start ."
+  },
+  "dependencies": {
+    "vapid-cli": "^0.3.4"
+  }
+}

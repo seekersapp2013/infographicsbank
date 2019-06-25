@@ -1,0 +1,21 @@
+> Kindly reduce the words that can be inserted in the timeline description to 7 lines and insert a "read more link" that redirects to the whole story. We discovered the words on the timeline sometimes becomes too much that it doesn't look good.
+
+> Also when redirected to the whole story, Kindly insert Twitter share link so that we can share on our social media page
+
+>We would like the pictures that shows on the homepage left side be two and beside each other. We discovered also that the measurement of spaces between the pictures are not the same, please check
+
+>Increase the number of timelines to 12 and also increase the timeline page from just one to as much as possible, 
+Kindly note that this is because we will have to update stories as much as possible. 
+Also allow us to be able to submit a timeline page even if we don't fill all the timelines
+
+>On the timeline, we are only able to insert one picture. Please make it such that we can decide to include a picture for a particular event on the subject
+
+>Can you kindly send us the measurement of the background
+
+>Please change the background color to black, we don't want footer again so please remove. Also change the red and black line to red and white.
+
+> For the play page, kindly check www.punchng.com for how they inserted games on the right hand side of their himepage
+
+#142159
+
+#30B3E8

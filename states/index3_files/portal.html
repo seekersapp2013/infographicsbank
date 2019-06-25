@@ -1,0 +1,28 @@
+
+<!-- saved from url=(0094)file:///C:/Users/BudgIT%20(CivicHive)/Desktop/Home%20_%20Drink%20Smart%C2%AE_files/portal.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <script>
+    // Send a message to the parent
+    var sendMessage = function (event, value) {
+       window.parent.postMessage({
+         domain: 'sharethis.mgr.consensu.org',
+         event: event,
+         value: value 
+       }, '*');
+    };
+
+    function readCookie() {
+      var value = '; ' + document.cookie;
+      var parts = value.split('; euconsent=');
+      if (parts.length === 2) {
+        sendMessage('EU_CONSENT_COOKIE', parts.pop().split(';').shift());
+      } else {
+        sendMessage('EU_CONSENT_COOKIE', '');
+      }
+    }
+    readCookie();
+  </script>
+</head>
+<body>
+
+<style id="igor_ext_nofollow">a[rel~='nofollow']{outline:.14em dotted red !important;outline-offset:.2em;}a[rel~='nofollow'] > img{outline:thin dotted red !important;outline-offset:.2em;}</style></body></html>

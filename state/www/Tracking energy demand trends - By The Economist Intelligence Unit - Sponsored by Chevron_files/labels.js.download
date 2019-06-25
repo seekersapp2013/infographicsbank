@@ -1,0 +1,22 @@
+(function(EIU, $, undefined) {
+  EIU.labels = {
+      s_0: 'Total energy consumption',
+      s_1: 'Coal',
+      s_2: 'Natural gas',
+      s_3: 'Oil',
+      s_4: 'Nuclear power',
+      s_5: 'Renewable energy',
+      c_0: 'Total energy consumption per capita',
+      e_0: 'Residential',
+      e_1: 'Commercial',
+      e_2: 'Industrial',
+      e_3: 'Transportation',
+      p_0: 'Total energy production',
+      p_1: 'Coal production',
+      p_2: 'Natural gas production',
+      p_3: 'Crude oil production',
+      p_4: 'Nuclear electric power production',
+      p_5: 'Renewable energy production',
+  };
+
+}(window.EIU = window.EIU || {}, jQuery));

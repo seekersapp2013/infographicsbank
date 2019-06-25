@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Pen by  Astésio José</title>
+  
+  
+  
+      <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+      <style>
+body {
+  font-family: Tahoma, Arial, Verdana;
+  font-size: 12px;
+  color: black;
+}
+body #chartdiv {
+  width: 640px;
+  height: 400px;
+}
+
+      </style>
+  
+</head>
+
+<body>
+
+  <script src="https://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
+
+<div id="chartdiv"></div>
+  
+  
+
+    <!-- <script  src="js/index.js"></script> -->
+
+<script>
+var chart;
+var graph;
+var categoryAxis;
+
+var chartData = 
+[
+  {
+	  "country": "USA",
+		"visits": 4252,
+    "color": "#127A8B"
+	},
+	{
+		"country": "China",
+		"visits": 1882,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "Japan",
+		"visits": 1809,
+    "color": "#127A8B"
+	}, 
+	{
+	  "country": "Germany",
+		"visits": 1322,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "UK",
+		"visits": 1122,
+    "color": "#127A8B"
+	}, 
+	{
+		"country": "France",
+		"visits": 1114,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "India",
+		"visits": 984,
+    "color": "#127A8B"
+    
+	}, 
+	{
+		"country": "Spain",
+		"visits": 711,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "Netherlands",
+		"visits": 665,
+    "color": "#127A8B"
+	}, 
+	{
+		"country": "Russia",
+		"visits": 580,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "South Korea",
+		"visits": 443,
+    "color": "#127A8B"
+	}, 
+	{
+		"country": "Canada",
+		"visits": 441,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "Brazill",
+		"visits": 395,
+    "color": "#127A8B"
+	}, 
+	{
+	  "country": "Italy",
+		"visits": 386,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "Australia",
+		"visits": 384,
+    "color": "#127A8B"
+	}, 
+	{
+		"country": "Taiwan",
+		"visits": 338,
+    "color": "#184E6"
+	}, 
+	{
+		"country": "Poland",
+		"visits": 328,
+    "color": "#127A8B"
+	}
+];
+
+
+AmCharts.ready(function () {
+  chart = new AmCharts.AmSerialChart();
+	chart.dataProvider = chartData;
+	chart.categoryField = "country";
+  chart.position = "left";
+  chart.angle = 30;
+	chart.depth3D = 15;
+  chart.startDuration = 1;
+  
+  categoryAxis = chart.categoryAxis;
+	categoryAxis.labelRotation = 45;
+  categoryAxis.dashLength = 5; //
+  categoryAxis.gridPosition = "start";
+  categoryAxis.autoGridCount = false;
+	categoryAxis.gridCount = chartData.length;
+  
+    
+	graph = new AmCharts.AmGraph();
+	graph.valueField = "visits";
+	graph.type = "column";	
+  graph.colorField = "color";
+	graph.lineAlpha = 0;
+  graph.fillAlphas = 0.8;
+  graph.balloonText = "[[category]]: <b>[[value]]</b>";
+  
+  chart.addGraph(graph);
+  
+  chart.write('chartdiv');
+});
+</script>
+
+
+</body>
+
+</html>

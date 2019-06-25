@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+body {
+  font-family: Roboto, sans-serif;
+}
+.section:nth-child(2n){
+  background: #127A8B;
+}
+h1, h2 {
+  text-align: center;
+}
+strong {
+  color: #3549B7;
+}
+a {
+  text-decoration: none;
+  color: #80A4C6;
+}

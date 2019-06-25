@@ -1,0 +1,135 @@
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+/* This is the wrapper holding all page contents */
+#wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    padding-left: 0.5%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+/* This is the details sector */
+#details_sect {
+    display: block;
+    width: 30%;/* Edit this */
+    padding: 2% 2% 2% 2%;
+}
+/* This is the details sector head */
+#details_head {
+    display: block;
+}
+/* This is the details sector head title */
+#head_title {
+    display: flex;
+    background-color: teal;
+    padding: 2%;
+}
+/* This is the details sector head values */
+#head_values {
+    display: flex;
+    background-color: teal;
+    margin-bottom: -0%;
+}
+
+/* ======================================================= */
+
+/* This is the details sector body */
+#details_body {
+    width: 100%;
+    display: block;
+    background-color: #f3f3f4;
+}
+/* ======================================================= */
+
+.text_title {
+    font-size: 80%;
+    font-weight: bold;
+    float: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-flex;
+    margin-bottom: -0%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+.number_head {
+    float: left;
+    display: inline-flex;
+    font-size: 230%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2%;
+    margin-bottom: -0%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.number {
+    display: inline-block;
+    font-size: 230%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -8%;
+    margin-bottom: -15%;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+#state_name {
+    font-size: 120%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    float: right;
+    display: block;
+    margin-top: -0%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 2%;
+}
+
+#state_field {
+    text-transform: uppercase;
+    max-width: 100%;
+}
+
+/* ======================================================= */
+
+/* This is the details sector image */
+#logo {
+    width: 50%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+/* This is the map sector */
+#map_sect {
+    float: right;
+    text-align: center;
+    min-width: 69%;
+    max-width: fit-content;
+}
+#map_div {
+    display:block;
+    margin-top: -10%;
+    margin-left: -15%;/* I edited this */
+    
+}
+.map_title {
+    font-size: 150%;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-flex;
+    margin-bottom: -0%;
+    margin-top: 2%;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+
+.white {
+    color: white;
+}
+.black {
+    color: #58585A;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */

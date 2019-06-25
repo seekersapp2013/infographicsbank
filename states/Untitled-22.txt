@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chrunch Corruption</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <!-- css -->
+
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.css">
+  
+ <style>
+ /* @import 'bulma/css/bulma.css'; */
+ /* .card + .card {
+  margin-top: 20px;
+} */
+
+ </style>
+ 
+ <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+ 
+<link rel="stylesheet" type="text/css" media="min-device-width: 480px" href="stylesheets/mobile.css" /> 
+
+       <link rel="stylesheet" href="stylesheets/timeline.pack.css">
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+	let cardToggles = document.getElementsByClassName('card-toggle');
+	for (let i = 0; i < cardToggles.length; i++) {
+		cardToggles[i].addEventListener('click', e => {
+			e.currentTarget.parentElement.parentElement.childNodes[3].classList.toggle('is-hidden');
+		});
+	}
+});
+
+</script>
+
+<style>
+
+.mobileshow { 
+display:none; 
+}
+@media screen and (max-width: 500px) {
+#mobileshow { 
+display:block; }
+}
+
+.desktopshow { 
+display:none; 
+}
+@media screen and (max-width: 500px) {
+.desktopshow { 
+display:block; }
+}
+
+.margin{
+    margin-left: 30%;
+}
+.nav{
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 10px;
+  color: #4C4C4D;
+  border: none;
+  background: {{bg-color required=false}};
+}
+</style>
+
+<style>
+@media only screen and (max-width: 600px) {
+  body {
+  font-family: tahoma;
+  padding: 40px 0;
+}
+
+.main-timeline {
+  font-family: tahoma;
+  padding: 20px 0;
+  position: relative;
+}
+
+.main-timeline::before,
+.main-timeline::after {
+  content: "";
+  height: 40px;
+  width: 40px;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  border: 10px solid #4C4C4D;
+  transform: translatex(-50%);
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  z-index: 2;
+}
+
+/*Black Circle Ends Here*/
+ .main-timeline::after {
+  top: auto;
+  bottom: 15px;
+} 
+
+.main-timeline .timeline {
+  padding: 35px 0;
+  margin-top: -30px;
+  position: relative;
+  z-index: 1;
+}
+
+.main-timeline .timeline::before,
+.main-timeline .timeline::after {
+  content: "";
+  height: 100%;
+  width: 50%;
+  border-radius: 110px 0 0 110px;
+  border: 15px solid #888d8d;
+  border-right: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.main-timeline .timeline::after {
+  height: calc(100% - 30px);
+  width: calc(50% - 12px);
+  border-color: #ED2024;
+  left: 12px;
+  top: 15px;
+}
+
+.main-timeline .timeline-content {
+  display: inline-block;
+}
+
+.main-timeline .timeline-content:hover {
+  text-decoration: none;
+}
+
+.main-timeline .timeline-year {
+  color: #ED2024;
+  font-size: 50px;
+  font-weight: 600;
+  display: inline-block;
+  transform: translatey(-50%);
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+.main-timeline .timeline-icon {
+    color: #ED2024;
+    font-size: 70px;
+    display: inline-block;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 34%;
+    top: 50%;
+}
+
+.main-timeline .content {
+  color: #4C4C4D;
+  width: 50%;
+  padding: 20px;
+  display: inline-block;
+  float: right;
+}
+
+.main-timeline .title {
+  color: #ED2024;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+}
+
+.main-timeline .description {
+  font-size: 16px;
+  margin: 0;
+}
+
+.main-timeline .timeline:nth-child(even)::before {
+  left: auto;
+  right: 0;
+  border-radius: 0 110px 110px 0;
+  border: 15px solid #ED2024;
+  border-left: none;
+  padding-bottom: 15px
+}
+
+
+.main-timeline .timeline:nth-child(even)::after {
+  left: auto;
+  right: 12px;
+  border-radius: 0 100px 100px 0;
+  border: 15px solid #4C4C4D;
+  border-left: none;
+}
+
+.main-timeline .timeline:nth-child(even) .content {
+  float: left;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-year {
+    left: auto;
+    right: 10%;
+}
+
+.main-timeline .timeline:nth-child(even) .timeline-icon {
+  left: auto;
+  right: 32%;
+}
+
+.main-timeline .timeline:nth-child(5n+1)::before {
+  border-color: #ED2024;
+}
+
+
+.main-timeline .timeline:nth-child(5n+1)::after {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+1) .timeline-icon {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+1) .timeline-year {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+1) .title {
+  color: #ED2024;
+}
+
+/*Second Timeline*/
+.main-timeline .timeline:nth-child(5n+2)::before {
+  border-color: #4C4C4D;
+}
+
+
+.main-timeline .timeline:nth-child(5n+2)::after {
+  border-color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+2) .timeline-icon {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+2) .timeline-year {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+2) .title {
+  color: #4C4C4D;
+}
+
+/*Timeline 3*/
+.main-timeline .timeline:nth-child(5n+3)::before {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+3)::after {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+3) .timeline-icon
+{
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+3) .timeline-year {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+3) .title {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+4)::before {
+  border-color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+4)::after {
+  border-color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+4) .timeline-icon {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+4) .timeline-year {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+4) .title {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+5)::before {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+5)::after {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+5) .timeline-icon {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+5) .timeline-year {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+5) .title {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+6)::before {
+  border-color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+6)::after {
+  border-color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+6) .timeline-icon {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+6) .timeline-year {
+  color: #4C4C4D;
+}
+
+.main-timeline .timeline:nth-child(5n+6) .title {
+  color: #4C4C4D;
+}
+.main-timeline .timeline:nth-child(5n+7)::before {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+7)::after {
+  border-color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+7) .timeline-icon {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+7) .timeline-year {
+  color: #ED2024;
+}
+
+.main-timeline .timeline:nth-child(5n+7) .title {
+  color: #ED2024;
+}
+
+@media screen and (max-width:1200px){
+    .main-timeline .timeline:after{ border-radius: 88px 0 0 88px; }
+    .main-timeline .timeline:nth-child(even):after{ border-radius: 0 88px 88px 0; }
+}
+@media screen and (max-width:767px){
+    .main-timeline .timeline{ margin-top: -19px; }
+    .main-timeline .timeline:before {
+        border-radius: 50px 0 0 50px;
+        border-width: 10px;
+    }
+    .main-timeline .timeline:after {
+        height: calc(100% - 18px);
+        width: calc(50% - 9px);
+        border-radius: 43px 0 0 43px;
+        border-width:10px;
+        top: 9px;
+        left: 9px;
+    }
+    .main-timeline .timeline:nth-child(even):before {
+        border-radius: 0 50px 50px 0;
+        border-width: 10px;
+    }
+    .main-timeline .timeline:nth-child(even):after {
+        height: calc(100% - 18px);
+        width: calc(50% - 9px);
+        border-radius: 0 43px 43px 0;
+        border-width: 10px;
+        top: 9px;
+        right: 9px;
+    }
+    .main-timeline .timeline-icon{ font-size: 60px; }
+    .main-timeline .timeline-year{ font-size: 40px; }
+}
+@media screen and (max-width:479px){
+    .main-timeline .timeline-icon{
+        font-size: 50px;
+        transform:translateY(0);
+        top: 25%;
+        left: 10%;
+    }
+    .main-timeline .timeline-year{
+        font-size: 25px;
+        transform:translateY(0);
+        top: 65%;
+        left: 9%;
+    }
+    .main-timeline .content{
+        width: 68%;
+        padding: 10px;
+    }
+    .main-timeline .title{ font-size: 18px; }
+    .main-timeline .timeline:nth-child(even) .timeline-icon{
+        right: 10%;
+    }
+    .main-timeline .timeline:nth-child(even) .timeline-year{
+        right: 9%;
+    }
+}
+}
+</style>
+<style>
+  .Hide {
+    display: none;
+  }
+</style>
+</head>
+<body style="background: url({{background_image type=link tag=unfurl required=false}}) {{bg-color required=false}}; background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed;">  
+  <div class="columns">
+        <div class="column">
+          <img src="{{logo type=link tag=unfurl required=false label=Logo}}" width="300px" height="100px" style="margin-left:10%;" >
+     <br>
+     <br>
+     <br>
+        </div>
+        <!-- <div class="column"></div> -->
+        <div class="column">
+          <br>
+          <br>
+          <nav class="pagination is-rounded nav" role="navigation" aria-label="pagination">
+            <a href="#" class="pagination-previous  active nav">Play</a>
+            <a href="cc.html" class="pagination-previous  active nav">Corruption Chain</a>
+            
+            <a href="about.html" class="pagination-previous normal nav">About Us</a>
+            <a href="Contact.html" class="pagination-previous normal nav">Contact Us`</a>
+            
+            <ul class="pagination-list">
+              <!-- <li><a href="index.html" target="_blank" class="pagination-link" aria-label="Goto page 1">&lt;</a></li> -->
+              <!-- <li><span class="pagination-ellipsis">…</span></li> -->
+              <!-- <li><a class="pagination-link" aria-label="Goto page 45">45</a></li> -->
+              <!-- <li><a class="pagination-link active" aria-label="Page 46" aria-current="page">46</a></li> -->
+              <!-- <li><a class="pagination-link" aria-label="Goto page 47">47</a></li> -->
+              <!-- <li><span class="pagination-ellipsis">…</span></li> -->
+              <!-- <li><a class="pagination-link" aria-label="Goto page 86">&gt;</a></li> -->
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    
+<div class="columns">
+  <div class="column is-3">
+
+    <ul>
+          {{#section side multiple=true label=Timeline sortable=true}}
+            <li>
+                      <div class="row">
+                          <div class="col-sm-8">
+                            <div class="margin">
+                                <center>
+                                    <div class="center">
+                                    <a class="thumb-image active" href="{{_permalink required=false}}" data-index="0" style="color: white;">
+                                          <img src="{{image type=link tag=unfurl required=false}}" class="image is-64x64 is-rounded"> {{name required=false}} </a>   
+                                    </div>
+                                    
+                                          
+                                  </center>
+                                 
+                            </div>
+                               </div>
+                            </div>
+                    
+            </li>
+          {{/section}}
+        </ul>
+
+        <div class="mobileshow">
+            <div class="row">
+                <div class="col-sm-8">
+                    {{#section side multiple=true label=Timeline sortable=true}}
+                  <div class="margin">
+                      <center>
+                          <div class="center">
+                          <a class="thumb-image active" href="{{_permalink required=false}}" data-index="0" style="color: white;">
+                                <img src="{{image ype=link tag=unfurl}}" class="image is-64x64 is-rounded"> {{name required=false}} </a>   
+                          </div>
+                                          
+                        </center>
+                      
+                  </div>
+                    {{/section}}
+
+                     </div>
+                  </div>
+
+        </div>
+
+  </div>
+
+  <div class="column is-3">
+      {{#section side limit=1}}
+      <center>
+<img src="{{image ype=link tag=unfurl}}"> 
+<!-- <div class="progreess"></div> -->
+
+<h1 style="color:#4C4C4D" >{{name required=false}} </h1>
+<h4 style="color:#4C4C4D" >{{position required=false}}</h2>
+<h4 style="color:#ED2024" >{{case required=false}}</h2>
+</center>
+
+{{/section}}
+
+  </div>
+  <div class="column">
+      {{#section side limit=1}}
+                    
+      <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="main-timeline">
+
+                <div class="Hide timeline" style="display: {{Display1 Label='Display Toggle - Timeline 1'  type=choice input=toggle options=Display required=false}};">
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{1 label='Timeline 1 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-rocket" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{2 label='Timeline 1 Title' required=false}}</h3>
+                      <p class="description">
+                          {{3 label='Timeline 1 Description' required=false type=html}}
+                          
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+                
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display2 Label='Display Toggle - Timeline 2'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{4 label='Timeline 2 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-users" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{5 label='Timeline 2 Title' required=false}}</h3>
+                      <p class="description">
+                          {{6 label='Timeline 2 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display3 Label='Display Toggle - Timeline 3'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{7 label='Timeline 3 Date' required=false type=html}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-cog" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{8 label='Timeline 3 Title' required=false}}</h3>
+                      <p class="description">
+                          {{9 label='Timeline 3 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display4 Label='Display Toggle - Timeline 4'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{10 label='Timeline 4 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-heart" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{11 label='Timeline 4 Title' required=false}}</h3>
+                      <p class="description">
+                          {{12 label='Timeline 4 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display5 Label='Display Toggle - Timeline 5'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{13 label='Timeline 5 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-globe" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{14 label='Timeline 5 Title' required=false}}</h3>
+                      <p class="description">
+                          {{15 label='Timeline 5 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display6 Label='Display Toggle - Timeline 6'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{16 label='Timeline 6 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-apple" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{17 label='Timeline 6 Title' required=false}}</h3>
+                      <p class="description">
+                          {{18 label='Timeline 6 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display7 Label='Display Toggle - Timeline 7'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                  <a href="#" class="timeline-content">
+                    <span class="timeline-year">{{19 label='Timeline 7 Date' required=false}}</span>
+                    <div class="timeline-icon">
+                      <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                    </div>
+                    <div class="content">
+                      <h3 class="title">{{20 label='Timeline 7 Title' required=false}}</h3>
+                      <p class="description">
+                          {{21 label='Timeline 7 Description' required=false type=html}}
+                      </p>
+                      <div class='oss-widget-interface'></div>
+                    </div>
+                  </a>
+                </div>
+
+                {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display8 Label='Display Toggle - Timeline 8'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                    <a href="#" class="timeline-content">
+                      <span class="timeline-year">{{22 label='Timeline 8 Date' required=false}}</span>
+                      <div class="timeline-icon">
+                        <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                      </div>
+                      <div class="content">
+                        <h3 class="title">{{23 label='Timeline 8 Title' required=false}}</h3>
+                        <p class="description">
+                            {{24 label='Timeline 8 Description' required=false type=html}}
+                        </p>
+                        <div class='oss-widget-interface'></div>
+                      </div>
+                    </a>
+                  </div>
+
+                  {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display9 Label='Display Toggle - Timeline 9'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                      <a href="#" class="timeline-content">
+                        <span class="timeline-year">{{25 label='Timeline 9 Date' required=false}}</span>
+                        <div class="timeline-icon">
+                          <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                        </div>
+                        <div class="content">
+                          <h3 class="title">{{26 label='Timeline 9 Title' required=false}}</h3>
+                          <p class="description">
+                              {{27 label='Timeline 9 Description' required=false type=html}}
+                          </p>
+                          <div class='oss-widget-interface'></div>
+                        </div>
+                      </a>
+                    </div>
+
+                    {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display10 Label='Display Toggle - Timeline 10'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                        <a href="#" class="timeline-content">
+                          <span class="timeline-year">{{28 label='Timeline 10 Date' required=false}}</span>
+                          <div class="timeline-icon">
+                            <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                          </div>
+                          <div class="content">
+                            <h3 class="title">{{29 label='Timeline 10 Title' required=false}}</h3>
+                            <p class="description">
+                                {{30 label='Timeline 10 Description' required=false type=html}}
+                            </p>
+                            <div class='oss-widget-interface'></div>
+                          </div>
+                        </a>
+                      </div>
+
+                      {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display11 Label='Display Toggle - Timeline 11'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                          <a href="#" class="timeline-content">
+                            <span class="timeline-year">{{31 label='Timeline 11 Date' required=false}}</span>
+                            <div class="timeline-icon">
+                              <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                            </div>
+                            <div class="content">
+                              <h3 class="title">{{32 label='Timeline 11 Title' required=false}}</h3>
+                              <p class="description">
+                                  {{33 label='Timeline 11 Description' required=false type=html}}
+                              </p>
+                              <div class='oss-widget-interface'></div>
+                            </div>
+                          </a>
+                        </div>
+
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display12 Label='Display Toggle - Timeline 12'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{34 label='Timeline 12 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{35 label='Timeline 12 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{36 label='Timeline 12 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display13 Label='Display Toggle - Timeline 13'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{37 label='Timeline 13 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{38 label='Timeline 13 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{39 label='Timeline 13 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display14 Label='Display Toggle - Timeline 14'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{40 label='Timeline 14 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{41 label='Timeline 14 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{42 label='Timeline 14 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display15 Label='Display Toggle - Timeline 15'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{43 label='Timeline 15 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{44 label='Timeline 15 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{45 label='Timeline 15 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display16 Label='Display Toggle - Timeline 16'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{46 label='Timeline 16 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{47 label='Timeline 16 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{48 label='Timeline 16 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display17 Label='Display Toggle - Timeline 17'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{49 label='Timeline 17 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{50 label='Timeline 17 Title' required=false}}</h3>
+                                <p class="description">8
+                                    {{51 label='Timeline 17 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display18 Label='Display Toggle - Timeline 18'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{52 label='Timeline 18 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{53 label='Timeline 18 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{54 label='Timeline 18 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display19 Label='Display Toggle - Timeline 19'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{55 label='Timeline 19 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{56 label='Timeline 19 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{57 label='Timeline 19 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+                          
+                        {{#section dply label='Timeline Settings'}}<div class="Hide timeline" style="display: {{Display20 Label='Display Toggle - Timeline 20'  type=choice input=toggle options=Display required=false}};">{{/section}}
+                            <a href="#" class="timeline-content">
+                              <span class="timeline-year">{{58 label='Timeline 20 Date' required=false}}</span>
+                              <div class="timeline-icon">
+                                <!-- <i class="fa fa-edit" aria-hidden="true"></i> -->
+                              </div>
+                              <div class="content">
+                                <h3 class="title">{{59 label='Timeline 20 Title' required=false}}</h3>
+                                <p class="description">
+                                    {{60 label='Timeline 20 Description' required=false type=html}}
+                                </p>
+                                <div class='oss-widget-interface'></div>
+                              </div>
+                            </a>
+                          </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        {{/section}}
+             
+            
+          </div>
+        </div>
+
+
+<script type="text/javascript" src="//sharecdn.social9.com/v2/js/opensocialshare.js"></script><script type="text/javascript" src="//sharecdn.social9.com/v2/js/opensocialsharedefaulttheme.js"></script><link rel="stylesheet" type="text/css" href="//sharecdn.social9.com/v2/css/os-share-widget-style.css"/><script type="text/javascript">var shareWidget = new OpenSocialShare();shareWidget.init({isHorizontalLayout: 1,widgetIconSize: "32",widgetStyle: "square",theme: 'OpenSocialShareDefaultTheme',providers: { top: ["Facebook","GooglePlus","LinkedIn","Twitter"]}});shareWidget.injectInterface(".oss-widget-interface");shareWidget.setWidgetTheme(".oss-widget-interface");</script>
+</body>
+</html>
